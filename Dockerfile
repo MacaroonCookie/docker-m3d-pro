@@ -2,6 +2,9 @@ FROM ubuntu:18.04
 
 LABEL maintainer="Seth Cook <cooker52@gmail.com>"
 
+VOLUME /root/stl
+VOLUME /root/.local/share/M3D
+
 RUN echo "UTC" > /etc/timezone \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true apt-get install -y \
