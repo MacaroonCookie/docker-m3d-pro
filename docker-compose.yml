@@ -1,0 +1,16 @@
+---
+version: "2"
+services:
+  m3d-vnc:
+    build: ./
+    restart: unless-stopped
+    volumes:
+      - /opt/3d-printer/stl:/root/stl
+      - /opt/3d-printer/settings:root/.local/share/M3D
+    devices:
+      - /dev/ttyACM0
+      - /dev/dri
+    network_mode: host
+    ports:
+      - 5000:5000
+    
